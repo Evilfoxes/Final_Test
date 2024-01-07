@@ -10,13 +10,13 @@ Console.WriteLine();
 Console.Write("Input symbols: ");
 PrintArray(arraySimbol);
 Console.WriteLine();
-Console.Write("IEntered characters whose length is less than or equal to 3: ");
+Console.Write("Entered characters whose length is less than or equal to 3: ");
 PrintArray(GetArrayThreeSimbol(arraySimbol));
 Console.WriteLine();
 
-String[] GetArrayStringConsole (string consoleText)
+string[] GetArrayStringConsole (string consoleText)
 {
-    string[] arrayText  = new string[consoleText.Length];
+    string[] arrayText = new string[consoleText.Length];
     arrayText = consoleText.Split(",");
     return arrayText;
 }
@@ -24,7 +24,7 @@ String[] GetArrayStringConsole (string consoleText)
 string[] GetArrayThreeSimbol (string[] array)
 {
     int temp = 0;
-    for (int i = 0; i <array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         string simbol = array[i];
         if (simbol.Length <= 3)
@@ -33,7 +33,7 @@ string[] GetArrayThreeSimbol (string[] array)
         }
     }
     string[] arrayThreeSimbol = new string[temp];
-    for (int i = 0; j = 0 i < array.Length; i++)
+    for (int i = 0, j = 0; i < array.Length; i++)
     {
         string simbol = array[i];
         if (simbol.Length <= 3)
