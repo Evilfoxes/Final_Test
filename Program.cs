@@ -1,58 +1,11 @@
-// using System.Diagnostics.Contracts;
-// using System.Globalization;
+﻿// Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. 
+// Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. 
+// При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-// Console.Clear();
-
-// Console.Write("Enter a set of characters separated by commas: ");
-// String inStringSimbol = Console.ReadLine() ?? "";
-// String[] arraySimbol = GetArrayStringConsole(inStringSimbol);
-// Console.WriteLine();
-// Console.Write("Input symbols: ");
-// PrintArray(arraySimbol);
-// Console.WriteLine();
-// Console.Write("Entered characters whose length is less than or equal to 3: ");
-// PrintArray(GetArrayThreeSimbol(arraySimbol));
-// Console.WriteLine();
-
-// string[] GetArrayStringConsole (string consoleText)
-// {
-//     string[] arrayText = new string[consoleText.Length];
-//     arrayText = consoleText.Split(",");
-//     return arrayText;
-// }
-
-// string[] GetArrayThreeSimbol (string[] array)
-// {
-//     int temp = 0;
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         string simbol = array[i];
-//         if (simbol.Length <= 3)
-//         {
-//             temp++;
-//         }
-//     }
-//     string[] arrayThreeSimbol = new string[temp];
-//     for (int i = 0, j = 0; i < array.Length; i++)
-//     {
-//         string simbol = array[i];
-//         if (simbol.Length <= 3)
-//         {
-//             arrayThreeSimbol[j] = simbol;
-//             j++;
-//         }
-//     }
-//     return arrayThreeSimbol;
-// }
-
-// void PrintArray (string[] array)
-// {
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         Console.Write($"{array[i]}, ");
-//     }
-//     Console.WriteLine();
-// }
+// Примеры:
+// [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
+// [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
+// [“Russia”, “Denmark”, “Kazan”] → []
 
 string[] CreateNewArray(string[] array)
 {
@@ -92,7 +45,7 @@ string[] CreateArray(int size)
     string[] array = new string[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] = GetInputText("Введите строку массива: ");
+        array[i] = GetInputText("Enter an array string: ");
     }
     return array;
 }
@@ -103,7 +56,7 @@ int GetInput(string text)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int size = GetInput("Задайте размер массива: ");
+int size = GetInput("Set the size of the array: ");
 string[] array = CreateArray(size);
 ConvertArray(array);
 Console.Write(" → ");
