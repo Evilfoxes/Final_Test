@@ -26,30 +26,30 @@ string[] GetArrayStringConsole (string consoleText)
 }
 ```
 
-2. Сортировка символов из массива с помощью метода `GetArrayThreeSimvol`:
+2. Сортировка символов из массива с помощью метода `GetArrayThreeSimbol`:
 ```cs
-string[] GetArrayThreeSimvol (string[] array)
+string[] GetArrayThreeSimbol (string[] array)
 {
     int temp = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        string simvol = array[i];
-        if (simvol.Length <= 3)
+        string simbol = array[i];
+        if (simbol.Length <= 3)
         {
             temp++;
         }
     }
-    string[] arrayThreeSimvol = new string[temp];
+    string[] arrayThreeSimbol = new string[temp];
     for (int i = 0, j = 0; i < array.Length; i++)
     {
-        string simvol = array[i];
-        if (simvol.Length <= 3)
+        string simbol = array[i];
+        if (simbol.Length <= 3)
         {
-            arrayThreeSimvol[j] = simvol;
+            arrayThreeSimbol[j] = simbol;
             j++;
         }
     }
-    return arrayThreeSimvol;
+    return arrayThreeSimbol;
 }
 ```
 
@@ -67,13 +67,13 @@ void PrintArray (string[] array)
 
 4. Создание пользовательского ввод текста для вызова вышеуказанных методов:
 ```cs
-Console.Write("Введите набор символов через запятую: ");
-string inStringSimvol = Console.ReadLine() ?? "";
-string[] arraySimvol = GetArrayStringConsole(inStringSimvol);
+Console.Write("Enter a set of characters separated by commas: ");
+String inStringSimbol = Console.ReadLine() ?? "";
+String[] arraySimbol = GetArrayStringConsole(inStringSimbol);
 Console.WriteLine();
-Console.Write("Введенные символы: ");
-PrintArray(arraySimvol);
+Console.Write("Input symbols: ");
+PrintArray(arraySimbol);
 Console.WriteLine();
-Console.Write("Введенные символы, длина которых меньше либо равно 3: ");
-PrintArray(GetArrayThreeSimvol(arraySimvol));
+Console.Write("Entered characters whose length is less than or equal to 3: ");
+PrintArray(GetArrayThreeSimbol(arraySimbol));
 Console.WriteLine();
